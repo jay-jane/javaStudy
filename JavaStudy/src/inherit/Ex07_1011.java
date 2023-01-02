@@ -1,10 +1,11 @@
 package inherit;
-
+//문제 51p ~
+//해설 269p ~
 class MyTv2 {
-	boolean isPowerOn;
-	int channel;
-	int volume;
-	int prevChannel;
+	private boolean isPowerOn;
+	private int channel;
+	private int volume;
+	private int prevChannel;
 	
 	final int MAX_VOLUME = 100;
 	final int MIN_VOLUME = 0;
@@ -15,6 +16,7 @@ class MyTv2 {
 		return channel;
 	}
 	public void setChannel(int channel) {
+		prevChannel = this.channel;
 		this.channel = channel;
 	}
 	public int getVolume() {
@@ -25,7 +27,7 @@ class MyTv2 {
 	}
 	
 	void gotoPrevChannel() {
-		
+		setChannel(prevChannel);
 	}
 }
 
